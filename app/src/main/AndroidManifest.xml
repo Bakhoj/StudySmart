@@ -16,6 +16,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".HomeWorkCalendar.HWCAct"
+            android:label="@string/title_activity_hwc" >
+        </activity>
+        <activity
+            android:name=".LogIn.LogInAct"
+            android:label="@string/title_activity_log_in" >
+        </activity>
+        <activity
+            android:name=".StudyGroupManager.SGMAct"
+            android:label="@string/title_activity_sgm" >
+        </activity>
     </application>
 
 </manifest>
