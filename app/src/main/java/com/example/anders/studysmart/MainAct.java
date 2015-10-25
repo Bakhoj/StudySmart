@@ -40,7 +40,6 @@ public class MainAct extends Activity {
             this.startActivity(i);
         }
         finish();
-
     }
 
     @Override
