@@ -1,16 +1,45 @@
 package com.example.anders.studysmart;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.anders.studysmart.Data.LSH;
+import com.example.anders.studysmart.HomeWorkCalendar.HWCAct;
+import com.example.anders.studysmart.LogIn.LogInAct;
+
+/**
+ * MainAct
+ * Runs on application startup
+ *
+ * onCreate:
+ *      IF LocalStorage = Empty THEN
+ *          GOTO LogInAct
+ *      else
+ *          GOTO HWCAct(activeUser)
+ */
 public class MainAct extends Activity {
+
+    LSH lsh;
+    Intent i;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_main);
+
+        lsh = new LSH();
+
+        if(lsh.isEmpty()){
+            i = new Intent(this, LogInAct.class);
+            this.startActivity(i);
+        } else {
+            i = new Intent(this, HWCAct.class);
+            this.startActivity(i);
+        }
+
     }
 
     @Override

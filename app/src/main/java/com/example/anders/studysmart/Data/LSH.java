@@ -10,4 +10,12 @@ package com.example.anders.studysmart.Data;
  * All other classes should use this class when accessing or storing data for local storage.
  */
 public class LSH {
+
+    public LSH(){
+
+    }
+
+    public Boolean isEmpty(){
+        return true;
+    }
 }
