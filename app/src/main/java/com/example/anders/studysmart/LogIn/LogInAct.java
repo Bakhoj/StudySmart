@@ -29,11 +29,30 @@ public class LogInAct extends Activity implements View.OnClickListener{
     @Override
     public void onClick(View v) {
         if (v == login) {
-            i = new Intent(this, HWCAct.class);
-            this.startActivity(i);
+            if(login()) {
+                i = new Intent(this, HWCAct.class);
+                this.startActivity(i);
+                finish();
+            } else {
+                loginFail();
+            }
         } else if(v == create) {
 
         }
+    }
+
+    private boolean login(){
+        /*
+            check if the user and password fit with the Database
+         */
+        return true;
+    }
+
+    private void loginFail(){
+        /*
+            Add popup window or something telling the user
+            that the user and password combination wasn't found
+         */
     }
 
 }

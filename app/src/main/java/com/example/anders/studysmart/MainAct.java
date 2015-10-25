@@ -39,6 +39,7 @@ public class MainAct extends Activity {
             i = new Intent(this, HWCAct.class);
             this.startActivity(i);
         }
+        finish();
 
     }
 
