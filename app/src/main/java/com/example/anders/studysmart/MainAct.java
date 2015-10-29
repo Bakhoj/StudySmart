@@ -30,7 +30,7 @@ public class MainAct extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_main);
 
-        lsh = LSH.getInstance();
+        lsh = LSH.getInstance(this);
 
         if(lsh.isEmpty()){
             i = new Intent(this, LogInAct.class);
