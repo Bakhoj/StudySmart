@@ -11,13 +11,18 @@ package com.example.anders.studysmart.Data;
  */
 public class LSH {
 
-    static boolean isEmpty;
-
-    public LSH(){
-        isEmpty = true;
-    }
+    boolean isEmpty;
 
     public Boolean isEmpty(){
         return isEmpty;
+    }
+    private static LSH ourInstance = new LSH();
+
+    public static LSH getInstance() {
+        return ourInstance;
+    }
+
+    private LSH() {
+        isEmpty = true;
     }
 }
