@@ -5,14 +5,18 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
+import com.example.anders.studysmart.Data.LSH;
 import com.example.anders.studysmart.HomeWorkCalendar.HWCAct;
 import com.example.anders.studysmart.R;
 
 public class LogInAct extends Activity implements View.OnClickListener{
 
     Button login, create;
+    EditText user, password;
     Intent i;
+    LSH lsh;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,9 +25,12 @@ public class LogInAct extends Activity implements View.OnClickListener{
 
         login = (Button) findViewById(R.id.login_ok_but);
         create = (Button) findViewById(R.id.login_create_but);
+        user = (EditText) findViewById(R.id.login_user_et);
+        password = (EditText) findViewById(R.id.login_password_et);
 
         login.setOnClickListener(this);
         create.setOnClickListener(this);
+        lsh = LSH.getInstance(this);
     }
 
     @Override
@@ -45,6 +52,7 @@ public class LogInAct extends Activity implements View.OnClickListener{
         /*
             check if the user and password fit with the Database
          */
+        lsh.loggedUser(user.getText().toString());
         return true;
     }
 

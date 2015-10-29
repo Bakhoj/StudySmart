@@ -29,7 +29,6 @@ public class LSH {
     }
 
     private LSH() {
-        isEmpty = true;
     }
     public Boolean isEmpty() {
         if(prefs.getDefaultSharedPreferences(a).getString(USER, EMPTY) == EMPTY){
@@ -38,5 +37,10 @@ public class LSH {
             isEmpty = false;
         }
         return isEmpty;
+    }
+
+    public boolean loggedUser(String user){
+        prefs.getDefaultSharedPreferences(a).edit().putString(USER, user).commit();
+        return true;
     }
 }
