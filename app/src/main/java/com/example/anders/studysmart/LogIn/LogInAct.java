@@ -30,7 +30,7 @@ public class LogInAct extends Activity implements View.OnClickListener{
 
         login.setOnClickListener(this);
         create.setOnClickListener(this);
-        lsh = LSH.getInstance(this);
+        lsh = LSH.getInstance();
     }
 
     @Override

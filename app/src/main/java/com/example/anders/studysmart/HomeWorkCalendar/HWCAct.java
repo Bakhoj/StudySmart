@@ -1,5 +1,6 @@
 package com.example.anders.studysmart.HomeWorkCalendar;
 
+import android.app.Fragment;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -18,6 +19,14 @@ public class HWCAct extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_hwc);
         scrollview = (ScrollView) findViewById(R.id.hwc_scroll);
+
+        if (savedInstanceState == null) {
+            Fragment fragment = new HWFrag();
+            getFragmentManager().beginTransaction()
+                    .add(R.id.Fragment_layout, fragment)
+                    .commit();
+        }
+
 
         TextView tv = new TextView(this);
         scrollview.addView(tv);
