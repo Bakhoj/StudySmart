@@ -23,7 +23,8 @@ public class LSH {
 
     private static LSH ourInstance = new LSH();
 
-    public static LSH getInstance(Activity a) {
+    // TODO: gør til rigtig singleton m. hjælp fra AndroidElementer
+    public static LSH getInstance() {
         LSH.a = a;
         return ourInstance;
     }

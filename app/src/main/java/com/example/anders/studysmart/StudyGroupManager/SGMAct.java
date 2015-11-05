@@ -13,4 +13,6 @@ public class SGMAct extends Activity {
         setContentView(R.layout.act_sgm);
     }
 
+
+
 }
