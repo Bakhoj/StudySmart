@@ -62,5 +62,4 @@ public class LogInAct extends Activity implements View.OnClickListener{
             that the user and password combination wasn't found
          */
     }
-
 }
