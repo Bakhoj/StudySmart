@@ -52,7 +52,7 @@ public class LogInAct extends Activity implements View.OnClickListener{
         /*
             check if the user and password fit with the Database
          */
-        lsh.loggedUser(user.getText().toString());
+        lsh.loggedUser(user.getText().toString(), this);
         return true;
     }
 

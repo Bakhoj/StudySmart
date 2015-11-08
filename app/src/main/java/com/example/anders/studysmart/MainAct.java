@@ -32,7 +32,7 @@ public class MainAct extends Activity {
 
         lsh = LSH.getInstance();
 
-        if(lsh.isEmpty()){
+        if(lsh.isEmpty(getApplicationContext())){
             i = new Intent(this, LogInAct.class);
             this.startActivity(i);
         } else {

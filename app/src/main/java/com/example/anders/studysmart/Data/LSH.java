@@ -1,6 +1,7 @@
 package com.example.anders.studysmart.Data;
 
 import android.app.Activity;
+import android.content.Context;
 import android.preference.PreferenceManager;
 
 /**
@@ -18,21 +19,19 @@ public class LSH {
     final private String EMPTY = "NULL";
 
     PreferenceManager prefs;
-    private static Activity a;
     boolean isEmpty;
 
     private static LSH ourInstance = new LSH();
 
     // TODO: gør til rigtig singleton m. hjælp fra AndroidElementer
     public static LSH getInstance() {
-        LSH.a = a;
         return ourInstance;
     }
 
     private LSH() {
     }
-    public Boolean isEmpty() {
-        if(prefs.getDefaultSharedPreferences(a).getString(USER, EMPTY) == EMPTY){
+    public Boolean isEmpty(Context c) {
+        if(prefs.getDefaultSharedPreferences(c).getString(USER, EMPTY) == EMPTY){
             isEmpty = true;
         } else {
             isEmpty = false;
@@ -40,7 +39,7 @@ public class LSH {
         return isEmpty;
     }
 
-    public boolean loggedUser(String user){
+    public boolean loggedUser(String user, Activity a){
         prefs.getDefaultSharedPreferences(a).edit().putString(USER, user).commit();
         return true;
     }

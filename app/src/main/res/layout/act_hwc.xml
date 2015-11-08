@@ -15,22 +15,18 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/hwc_scroll"
-        android:layout_below="@+id/hwc_logo_img"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true" />
-
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/hwc_scroll"
-        android:id="@+id/Fragment_layout"
-        android:layout_weight="1" >
+        android:layout_below="@+id/hwc_logo_img"
+        android:id="@+id/Fragment_layout">
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/hwc_scroll"
+            android:fillViewport="false"
+            />
     </FrameLayout>
 
     <ImageButton
