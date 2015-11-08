@@ -12,7 +12,13 @@ import android.widget.ListView;
 
 import com.example.anders.studysmart.R;
 
-public class HWFrag extends Fragment implements AdapterView.OnItemClickListener{
+/**
+ * HomeWorkFragment (HWFrag)
+ * will manage and setup the list for the homework in HWCAct
+ *
+ * http://stackoverflow.com/questions/6510550/android-listview-in-fragment
+ */
+public class HWFrag extends ListFragment implements AdapterView.OnItemClickListener{
 
     //private static final String ARG_PARAM1 = "param1";
     //private static final String ARG_PARAM2 = "param2";
@@ -48,6 +54,8 @@ public class HWFrag extends Fragment implements AdapterView.OnItemClickListener{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        View rootView = inflater.inflate(R.layout.frag_hw, container, false);
+
         return inflater.inflate(R.layout.frag_hw, container, false);
     }
 
