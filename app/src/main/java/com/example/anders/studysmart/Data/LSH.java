@@ -39,8 +39,8 @@ public class LSH {
         return isEmpty;
     }
 
-    public boolean loggedUser(String user, Activity a){
-        prefs.getDefaultSharedPreferences(a).edit().putString(USER, user).commit();
+    public boolean loggedUser(String user, Context c){
+        prefs.getDefaultSharedPreferences(c).edit().putString(USER, user).commit();
         return true;
     }
 }

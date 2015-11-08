@@ -22,7 +22,7 @@
         android:layout_below="@+id/hwc_logo_img"
         android:id="@+id/Fragment_layout">
         <ScrollView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/hwc_scroll"
             android:fillViewport="false"

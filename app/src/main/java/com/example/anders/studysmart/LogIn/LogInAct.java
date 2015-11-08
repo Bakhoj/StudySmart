@@ -10,6 +10,7 @@ import android.widget.EditText;
 import com.example.anders.studysmart.Data.LSH;
 import com.example.anders.studysmart.HomeWorkCalendar.HWCAct;
 import com.example.anders.studysmart.R;
+import com.example.anders.studysmart.StudyGroupManager.SGMAct;
 
 public class LogInAct extends Activity implements View.OnClickListener{
 
@@ -44,7 +45,9 @@ public class LogInAct extends Activity implements View.OnClickListener{
                 loginFail();
             }
         } else if(v == create) {
-
+            i = new Intent(this, SGMAct.class);
+            this.startActivity(i);
+            finish();
         }
     }
 
