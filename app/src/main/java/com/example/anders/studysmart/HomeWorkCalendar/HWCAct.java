@@ -26,7 +26,7 @@ public class HWCAct extends Activity {
                     .add(R.id.Fragment_layout, fragment)
                     .commit();
         }
-
+        /*
 
         TextView tv = new TextView(this);
         scrollview.addView(tv);
@@ -60,6 +60,6 @@ public class HWCAct extends Activity {
             tv.append(id + " " + date + "\n" + title + " " + description +"\n\n");
         }
         cursor.close();
-        db.close();
+        db.close(); */
     }
 }
