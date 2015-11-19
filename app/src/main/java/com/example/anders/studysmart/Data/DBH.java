@@ -17,12 +17,17 @@ import android.database.sqlite.SQLiteOpenHelper;
  * to the SQL-server.
  */
 public class DBH {
+    String databasePath = "/database.db";
     public DBH() {
-
     }
 
-    public void getHomework(){
-        SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase("/database.db", null); //should have getFilesDir() before "database...
+    public void createDatabase(){
+        createHomework();
+        createUsers();
+    }
+
+    private void createHomework(){
+        SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(databasePath, null); //should have getFilesDir() before "database...
 
         db.execSQL("DROP TABLE IF EXISTS homework;");
         db.execSQL("CREATE TABLE homework (id INTEGER PRIMARY KEY, title VARCHAR(200) NOT NULL, description TEXT, date TIMESTAMP NOT NULL);");
@@ -35,6 +40,28 @@ public class DBH {
                 "'NaS Session 4'," +
                 "'Articles\nEdith Penrose\n\tThe Business History Review 34(1): 1-23.\n\tNumber of Pages 22'," +
                 "'2015-09-09 08:00:00');");
+        db.close();
+    }
+
+    private void createUsers() { //skal laves - Bækhøj giver en hånd da han OWNER det der database shitz
+        SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(databasePath, null); //should have getFilesDir() before "database...
+
+        db.execSQL("DROP TABLE IF EXISTS user;");
+        db.execSQL("CREATE TABLE user (id INTEGER PRIMARY KEY, title VARCHAR(200) NOT NULL, description TEXT, date TIMESTAMP NOT NULL);");
+
+        db.execSQL("INSERT INTO user(title, description, date) VALUES(" +
+                "'NaS Session 3', " +
+                "'Articles\nMcCraw, Thomas K.\n\tBelknap Harvard: 67-76.\n\tNumber of Pages 4'," +
+                "'2015-09-03 08:00:00');");
+        db.execSQL("INSERT INTO user(title, description, date) VALUES(" +
+                "'NaS Session 4'," +
+                "'Articles\nEdith Penrose\n\tThe Business History Review 34(1): 1-23.\n\tNumber of Pages 22'," +
+                "'2015-09-09 08:00:00');");
+        db.close();
+    }
+
+    public void getHomework(){
+        SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(databasePath, null); //should have getFilesDir() before "database...
 
         String database = "homework";   // FROM
         String[] kolonner = {"date", "id", "title", "description"};         // SELECT
@@ -42,13 +69,8 @@ public class DBH {
         String sort = "date";           // ORDER BY
         Cursor cursor = db.query(database, kolonner, valg, null, null, null, sort);
         cursor.close();
+
         db.close();
     }
-
-    public void update(){
-
-    }
-
-
 
 }
