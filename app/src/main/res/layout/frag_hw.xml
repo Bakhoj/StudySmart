@@ -8,4 +8,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/hw_frag_listview" >
     </ListView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/hw_frag_empty"/>
 </FrameLayout>
