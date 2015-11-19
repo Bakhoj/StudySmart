@@ -18,7 +18,7 @@ public class HWCAct extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_hwc);
-        scrollview = (ScrollView) findViewById(R.id.hwc_scroll);
+        //scrollview = (ScrollView) findViewById(R.id.hwc_scroll);
 
         if (savedInstanceState == null) {
             Fragment fragment = new HWFrag();

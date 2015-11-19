@@ -3,8 +3,8 @@ package com.example.anders.studysmart.HomeWorkCalendar;
 import android.app.ListFragment;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 
 /**
@@ -13,7 +13,7 @@ import android.widget.ArrayAdapter;
  *
  * http://www.vogella.com/tutorials/AndroidListView/article.html#listactivity
  */
-public class HWFrag extends ListFragment implements AdapterView.OnItemClickListener{
+public class HWFrag extends ListFragment {
 
     public HWFrag() {
         // Required empty public constructor
@@ -22,9 +22,6 @@ public class HWFrag extends ListFragment implements AdapterView.OnItemClickListe
     @Override
     public void onActivityCreated(Bundle savedInstanceState){
         super.onActivityCreated(savedInstanceState);
-//        String[]values = new String[] { "Android", "iPhone", "WindowsMobile",
-//                "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
-//                "Linux", "OS/2" };
         String[] values = new String[] {"03-09 08:00:00\n" +
                 "NaS Session 3\n" +
                 "Belknap Harvard: 67-76\n",
@@ -54,11 +51,7 @@ public class HWFrag extends ListFragment implements AdapterView.OnItemClickListe
                 android.R.layout.simple_list_item_1, values);
         setListAdapter(adapter);
     }
-
     @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+    public void onListItemClick(ListView l, View v, int position, long id){
     }
-
-
 }
