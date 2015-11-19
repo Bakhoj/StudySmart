@@ -18,10 +18,13 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class DBH {
     String databasePath = "/database.db";
-    public DBH() {
+    private static DBH ourInstance = new DBH();
+    public static DBH getInstance(){ return ourInstance;}
+    private DBH() {
+        createDatabase();
     }
 
-    public void createDatabase(){
+    private void createDatabase(){
         createHomework();
         createUsers();
     }

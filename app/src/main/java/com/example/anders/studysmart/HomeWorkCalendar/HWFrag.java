@@ -30,7 +30,25 @@ public class HWFrag extends ListFragment implements AdapterView.OnItemClickListe
                 "Belknap Harvard: 67-76\n",
         "09-09 13:00:00\n" +
                 "NaS Session 4\n" +
-                "The Business History Review 34: 1-23\n"};
+                "The Business History Review 34: 1-23\n",
+                "03-09 08:00:00\n" +
+                        "NaS Session 3\n" +
+                        "Belknap Harvard: 67-76\n",
+                "09-09 13:00:00\n" +
+                        "NaS Session 4\n" +
+                        "The Business History Review 34: 1-23\n",
+                "03-09 08:00:00\n" +
+                        "NaS Session 3\n" +
+                        "Belknap Harvard: 67-76\n",
+                "09-09 13:00:00\n" +
+                        "NaS Session 4\n" +
+                        "The Business History Review 34: 1-23\n",
+                "03-09 08:00:00\n" +
+                        "NaS Session 3\n" +
+                        "Belknap Harvard: 67-76\n",
+                "09-09 13:00:00\n" +
+                        "NaS Session 4\n" +
+                        "The Business History Review 34: 1-23\n"};
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
                 android.R.layout.simple_list_item_1, values);
